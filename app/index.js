@@ -1,6 +1,10 @@
 var angular = require('angular');
 require('angular-material');
-require('angular-mocks/angular-mocks');
+
+if (ON_TEST) {
+    require('angular-mocks/angular-mocks');
+}
+
 var home = require('./home');
 
 
