@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "webpack",
-    "start": "node server.js",
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "start": "NODE_ENV=test node server.js",
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+    "build": "NODE_ENV=production node ./node_modules/.bin/webpack cp * dist/*"
   },
   "repository": {
     "type": "git",

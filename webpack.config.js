@@ -4,7 +4,7 @@ path = require('path');
 
 var APP = __dirname + '/app';
 
-module.exports = {
+var config = {
     context: APP,
     entry: './index.js',
     output: {
@@ -22,3 +22,10 @@ module.exports = {
     })
   ]
 }
+
+
+if (process.env.NODE_ENV === 'production') {
+    config.output.path = __dirname + '/dist';
+}
+
+module.exports = config;
